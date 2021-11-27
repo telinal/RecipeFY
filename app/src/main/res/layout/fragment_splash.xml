@@ -19,6 +19,7 @@
             android:text="@string/hello_blank_fragment"
             app:lottie_autoPlay="true"
             app:lottie_loop="false"
+            app:lottie_speed="2"
             app:lottie_rawRes="@raw/recipes_book_animation"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"

@@ -1,4 +1,4 @@
-package com.example.recipefy.view
+package com.example.recipefy.view.search
 
 import android.os.Bundle
 import android.view.LayoutInflater
