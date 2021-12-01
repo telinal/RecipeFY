@@ -7,29 +7,29 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipefy.R
+import com.example.recipefy.databinding.HomeItemViewHBinding
+import com.example.recipefy.databinding.HomeItemViewVBinding
 
-class LatestRecipeAdapter(
-    private val myList: List<Store>
-): RecyclerView.Adapter<LatestRecipeAdapter.LatestRecipeViewHolder>() {
-
-    inner class LatestRecipeViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val imageView = itemView.findViewById<ImageView>(R.id.popularImage)
-        val titleTextView = itemView.findViewById<TextView>(R.id.text)
-        fun setData(store: Store){
-            titleTextView.text = store.titleStore
-        }
-    }
-
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LatestRecipeViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.recipe_item_view, parent, false)
-        return LatestRecipeViewHolder(view)
-    }
+class LatestRecipeAdapter(val myList: ArrayList<Store>):
+    RecyclerView.Adapter<LatestRecipeAdapter.LatestRecipeViewHolder>() {
 
     override fun onBindViewHolder(holder: LatestRecipeViewHolder, position: Int) {
         val data = myList[position]
         holder.setData(data)
 
+    }
+
+    inner class LatestRecipeViewHolder(private val binding: HomeItemViewVBinding): RecyclerView.ViewHolder(binding.root){
+        fun setData(store: Store){
+            binding.store = store
+
+        }
+    }
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LatestRecipeViewHolder {
+        val view = HomeItemViewVBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return LatestRecipeViewHolder(view)
     }
 
     override fun getItemCount(): Int {

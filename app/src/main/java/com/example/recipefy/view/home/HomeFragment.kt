@@ -38,31 +38,35 @@ class HomeFragment : Fragment() {
 
         myArrayList = arrayListOf(
             Store(
-                R.drawable.dumplings,
-                "Dumplings"
+                imageLink = "https://www.subbuskitchen.com/wp-content/uploads/2014/01/Veg-Noodles.jpg",
+                titleStore = "Dumplings"
             ),
             Store(
-                R.drawable.noodles,
-                "Noodles"
+                imageLink = "https://www.subbuskitchen.com/wp-content/uploads/2014/01/Veg-Noodles.jpg",
+                titleStore = "Dumplings"
             )
         )
-
-
         myArrayList.add(
             Store(
-                R.drawable.noodles,
-                "Noodles"
+                imageLink = "https://www.subbuskitchen.com/wp-content/uploads/2014/01/Veg-Noodles.jpg",
+                titleStore = "Dumplings"
             )
         )
-
         myArrayList.add(
             Store(
-                R.drawable.noodles,
-                "Noodles"
+                imageLink = "https://www.subbuskitchen.com/wp-content/uploads/2014/01/Veg-Noodles.jpg",
+                titleStore = "Dumplings"
+            )
+        )
+        myArrayList.add(
+            Store(
+                imageLink = "https://www.subbuskitchen.com/wp-content/uploads/2014/01/Veg-Noodles.jpg",
+                titleStore = "Dumplings"
             )
         )
 
         binding.recyclerViewHorizontal.adapter = PopularRecipeAdapter(myArrayList)
+        binding.recyclerViewVertical.adapter = LatestRecipeAdapter(myArrayList)
 
         binding.searchBox.setOnClickListener() {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSearchFragment())

@@ -3,6 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <data>
+        <variable
+            name="store"
+            type="com.example.recipefy.view.home.Store" />
+    </data>
 
     <androidx.cardview.widget.CardView
         android:layout_width="150dp"
@@ -22,7 +27,7 @@
                 android:id="@+id/popularImage"
                 android:scaleType="centerCrop"
                 android:foreground="@drawable/gradient"
-                tools:src="@drawable/noodles"
+                app:imageUrl="@{store.imageLink}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -35,6 +40,7 @@
                 android:layout_below="@+id/popularImage"
                 android:gravity="center"
                 android:layout_marginTop="5dp"
+                android:text="@{store.titleStore}"
                 tools:text="dumplings"
                 android:maxLines="1"
                 android:ellipsize="end"
